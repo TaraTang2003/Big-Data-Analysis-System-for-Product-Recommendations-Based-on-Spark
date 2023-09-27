@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="../static/img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="codepixer">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>大数据广告推荐系统可视化平台</title>
+
+	<!--
+			Google Font
+			============================================= -->
+<!--	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">-->
+<!--	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">-->
+
+	<!--
+			CSS
+			============================================= -->
+<!--	<link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">-->
+	<link rel="stylesheet" href="../static/css/linearicons.css">
+	<link rel="stylesheet" href="../static/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/magnific-popup.css">
+	<link rel="stylesheet" href="../static/css/nice-select.css">
+	<link rel="stylesheet" href="../static/css/animate.min.css">
+	<link rel="stylesheet" href="../static/css/owl.carousel.css">
+	<link rel="stylesheet" href="../static/css/main.css">
+
+	<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<!-- Start Banner Area -->
+	<section class="home-banner-area relative">
+		<div class="container">
+			<div class="row fullscreen d-flex align-items-center justify-content-center">
+				<div class="banner-content col-lg-8 col-md-12">
+					<h1 class="wow fadeIn" data-wow-duration="4s"><br>大数据广告推荐系统 <br> 可视化平台</h1>
+					<p class="text-white">
+						Visualization platform of big data advertising recommendation system
+					</p>
+
+					<div class="input-wrap">
+						<form action="/search" class="form-box d-flex justify-content-between">
+							<input type="text" placeholder="输入广告关键字" class="form-control" name="gword">
+							<button type="submit" class="btn search-btn">搜索</button>
+						</form>
+					</div>
+
+					<div class="courses pt-20">
+						<a href="#class1" data-wow-duration="1s" data-wow-delay=".3s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">分类一</a>
+						<a href="#classother" data-wow-duration="1s" data-wow-delay=".6s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">分类二</a>
+						<a href="#classother" data-wow-duration="1s" data-wow-delay=".9s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">分类三</a>
+						<a href="#classother" data-wow-duration="1s" data-wow-delay="1.2s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">分类四
+						</a>
+						<a href="#classother" data-wow-duration="1s" data-wow-delay="1.5s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">分类五</a>
+						<a href="#classother" data-wow-duration="1s" data-wow-delay="1.8s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">其他分类</a>
+						<a href="#classother" data-wow-duration="1s" data-wow-delay="2.1s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">分类关键词</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rocket-img">
+<!--			<img src="../static/img/rocket.png" alt="">-->
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<!-- Start Courses Area -->
+	<section class="courses-area section-gap" id="class1">
+		<div class="container">
+			<div class="row align-items-center" >
+				<div class="col-lg-5 about-right">
+					<h1>广告关键字
+					</h1>
+					<div class="wow fadeIn" data-wow-duration="1s">
+						<img src="../static/a2.png" alt="" width="550">
+						<p></p>
+					</div>
+<!--					<a href="courses.html" class="primary-btn white">More  >></a>-->
+				</div>
+				<div class="offset-lg-1 col-lg-6">
+					<div class="courses-right">
+						<div class="row" style="overflow: auto;height: 500px">
+							<div class="col-lg-6 col-md-6 col-sm-12" >
+								<ul class="courses-list">
+									{% if listwords!=null %}
+                                       {% for item in listwords %}
+											{% if item.tid==0%}
+											<li>
+												<a class="wow fadeInLeft" href="#">
+												<i class="fa fa-book"></i> {{item.keywords}}
+												</a>
+											</li>
+											{% endif %}
+										{% endfor %}
+                                {% endif %}
+								</ul>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<ul class="courses-list">
+									{% if listwords!=null %}
+                                       {% for item in listwords %}
+									    {% if item.tid==1%}
+									<li>
+										<a class="wow fadeInLeft" href="#" data-wow-duration="1s" data-wow-delay=".1s">
+											<i class="fa fa-book"></i> {{item.keywords}}
+										</a>
+									</li>
+								  	  {% endif %}
+									{% endfor %}
+                                {% endif %}
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Courses Area -->
+
+
+	<!--Start Feature Area -->
+	<section class="feature-area" id="classother">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+						<h1>其他分类关键字</h1>
+					</div>
+				</div>
+			</div>
+			<div class="feature-inner row">
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-crown"></i>
+						<h4>分类二</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s"  style="overflow-y: scroll;height: 100px">
+							<p>
+								{% if listwords!=null %}
+                                       {% for item in listwords %}
+									    {% if item.tid==2 %}
+									<span>{{item.keywords}} &nbsp;</span>
+
+								  	  {% endif %}
+									{% endfor %}
+                                {% endif %}
+								... ...
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-briefcase"></i>
+						<h4>分类三</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s" style="overflow-y: scroll;height: 100px">
+							<p>
+								{% if listwords!=null %}
+                                       {% for item in listwords %}
+									    {% if item.tid==3 %}
+									<span>{{item.keywords}} &nbsp;</span>
+
+								  	  {% endif %}
+									{% endfor %}
+                                {% endif %}
+								... ...
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-medall-alt"></i>
+						<h4>分类四</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s" style="overflow-y: scroll;height: 100px">
+							<p>
+								{% if listwords!=null %}
+                                       {% for item in listwords %}
+									    {% if item.tid==4 %}
+									<span>{{item.keywords}} &nbsp;</span>
+
+								  	  {% endif %}
+									{% endfor %}
+                                {% endif %}
+								... ...
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-key"></i>
+						<h4>分类五</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s" style="overflow-y: scroll;height: 100px">
+							<p>
+								{% if listwords!=null %}
+                                       {% for item in listwords %}
+									    {% if item.tid==5 %}
+									<span>{{item.keywords}} &nbsp;</span>
+
+								  	  {% endif %}
+									{% endfor %}
+                                {% endif %}
+								... ...
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-files"></i>
+						<h4>分类六</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s" style="overflow-y: scroll;height: 100px">
+							<p>
+								{% if listwords!=null %}
+                                       {% for item in listwords %}
+									    {% if item.tid==6 %}
+									<span>{{item.keywords}} &nbsp;</span>
+
+								  	  {% endif %}
+									{% endfor %}
+                                {% endif %}
+								... ...
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-headphone-alt"></i>
+						<h4>分类七</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s" style="overflow-y: scroll;height: 100px">
+							<p>
+							{% if listwords!=null %}
+                                       {% for item in listwords %}
+									    {% if item.tid==7 %}
+									<span>{{item.keywords}} &nbsp;</span>
+
+								  	  {% endif %}
+									{% endfor %}
+                                {% endif %}
+								... ...
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Feature Area -->
+
+	<!-- ####################### Start Scroll to Top Area ####################### -->
+	<div id="back-top">
+		<a title="Go to Top" href="#"></a>
+	</div>
+	<!-- ####################### End Scroll to Top Area ####################### -->
+
+	<script src="../static/js/vendor/jquery-2.2.4.min.js"></script>
+<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.../static/js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"-->
+<!--	 crossorigin="anonymous"></script>-->
+	<script src="../static/js/vendor/bootstrap.min.js"></script>
+<!--	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>-->
+	<script src="../static/js/easing.min.js"></script>
+	<script src="../static/js/hoverIntent.js"></script>
+	<script src="../static/js/superfish.min.js"></script>
+	<script src="../static/js/jquery.ajaxchimp.min.js"></script>
+	<script src="../static/js/jquery.magnific-popup.min.js"></script>
+	<script src="../static/js/owl.carousel.min.js"></script>
+	<script src="../static/js/owl-carousel-thumb.min.js"></script>
+	<script src="../static/js/jquery.sticky.js"></script>
+	<script src="../static/js/jquery.nice-select.min.js"></script>
+	<script src="../static/js/parallax.min.js"></script>
+	<script src="../static/js/waypoints.min.js"></script>
+	<script src="../static/js/wow.min.js"></script>
+	<script src="../static/js/jquery.counterup.min.js"></script>
+	<script src="../static/js/mail-script.js"></script>
+	<script src="../static/js/main.js"></script>
+
+
+</body>
+
+</html>

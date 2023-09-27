@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style>
+        body {
+            font-size: 12px;
+            font-family: 微软雅黑;
+            background-color: #f4f2f2
+        }
+        .fomdiv {
+        position: absolute;
+        background-color: white;
+        width: 400px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #e2f6ff;
+        box-shadow: 1px 1px 10px #e2f6ff;
+        border-radius: 10px;
+        padding: 30px;
+        font-size: 14px
+    }
+
+    .fomdiv h2 {
+        text-align: center;
+        padding: 10px 0px
+    }
+
+    .fomdiv input {
+        width: 300px;
+        margin-left: 15px;
+        padding-left: 10px;
+        border-radius: 10px;
+    }
+
+    .fomdiv .btn {
+        width: 100px;
+        padding-left: 0;
+    }
+
+    .fomdiv .btn1 {
+        background-color: #1195f9;
+        border: 0px;
+        color: white;
+        width: 100px
+    }
+
+    .fomdiv .btn2 {
+        border: 1px solid #1195f9;
+        color: #1195f9;
+        background-color: white;
+        width: 100px
+    }
+
+    .fomdiv p {
+        text-align: center;
+        margin: 15px 0px;
+    }
+
+    .fomdiv .link {
+        padding: 0px 40px
+    }
+
+    .fomdiv .link a {
+        color: #1195f9
+    }
+
+    </style>
+</head>
+<body>
+    <div class="fomdiv">
+        <h2>欢迎，请登录！</h2>
+        <form action="/login" method="post" name="fm">
+            <p>用户名<input type="text" name="user" placeholder="请输入用户名" onfocus='this.placeholder=""' onblur="this.placeholder='请输入用户名'"></p>
+            <p>密&nbsp;&nbsp;&nbsp;码<input type="password" name="password" placeholder="请输入密码" onfocus='this.placeholder=""' onblur="this.placeholder='请输入密码'"></p>
+            <p class="btns">
+                <input type="submit" class="btn btn1" value="登录" onclick="tosubmit()">
+                <input type="reset" class="btn btn2">
+            </p>
+        </form>
+    </div>
+</body>
+</html>

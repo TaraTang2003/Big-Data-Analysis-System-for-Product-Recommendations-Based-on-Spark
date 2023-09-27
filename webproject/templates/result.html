@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关键字搜索结果</title>
+	<link rel="stylesheet" href="../static/css/linearicons.css">
+	<link rel="stylesheet" href="../static/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/magnific-popup.css">
+	<link rel="stylesheet" href="../static/css/nice-select.css">
+	<link rel="stylesheet" href="../static/css/animate.min.css">
+	<link rel="stylesheet" href="../static/css/owl.carousel.css">
+	<link rel="stylesheet" href="../static/css/main.css">
+
+	<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+
+<!-- Start About Area -->
+	<section class="about-area section-gap">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-md-5" >
+					{% if arraybid!=null %}
+                          <!--		用户类别图表			       -->
+                         <div id="mainecharts" style="width: 600px;height:400px;"></div>
+					 {% endif %}
+				</div>
+				<div class="col-md-2 "></div>
+				<div class="col-md-5 ">
+					<h1>
+						广告推荐用户ID
+					</h1>
+					<h3>
+						Advertising Recommendation
+					</h3>
+					<br>
+					<div class="wow fadeIn" data-wow-duration="1s" style="height: 300px;overflow: auto">
+						<p>
+								{% if arraybid!=null %}
+                                       {% for item in arraybid %}
+									      {{item.userid}}<br>
+									{% endfor %}
+                                {% endif %}
+						</p>
+					</div>
+					<br>
+					<a href="/" class="primary-btn">返回首页</a>
+					<br><br>
+					<a href="" class="primary-btn">精准投放广告</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End About Area -->
+
+
+<script>
+$(function () {
+$.ajax({
+	url: '/ajaxdata',
+	success: function (data) {
+		json_data = JSON.parse(data)
+		console.log(json_data)
+		var chartDom = document.getElementById('mainecharts');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+  legend: {
+    top: 'bottom'
+  },
+  toolbox: {
+    show: true,
+    feature: {
+      mark: { show: true },
+      dataView: { show: true, readOnly: false },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  series: [
+    {
+      name: 'Nightingale Chart',
+      type: 'pie',
+      radius: [50, 190],
+      center: ['50%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        borderRadius: 8
+      },
+      data: json_data
+    }
+  ]
+};
+
+ myChart.setOption(option);
+	}
+})
+})
+</script>
+
+</body>
+</html>

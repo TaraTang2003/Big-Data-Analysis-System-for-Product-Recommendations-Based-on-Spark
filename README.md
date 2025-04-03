@@ -1,7 +1,7 @@
 # Big Data Analytics Product Recommendation System Based on Spark
 This project implements a big data product recommendation system using Apache Spark. It leverages text analysis and clustering algorithms to process product-related data and provides an interactive frontend for data visualization and search.
 
-**Technology Stack Overview**
+## Technology Stack Overview
 
 ### Backend - Java & Spark
 - **Database Connection**
@@ -13,8 +13,6 @@ This project implements a big data product recommendation system using Apache Sp
 - **Flask Server**
 - **pyecharts for Visualization**
 
-
----
 
 ## Features Overview
 

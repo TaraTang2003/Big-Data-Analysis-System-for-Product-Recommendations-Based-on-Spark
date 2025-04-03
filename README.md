@@ -28,7 +28,7 @@ This project implements a big data product recommendation system using Apache Sp
 - Keyword-based product search box
 - Pie chart visualization of search results
 
-### ⚙Data Processing
+### Data Processing
 - Chinese word segmentation using TF-IDF
 - KMeans clustering for product grouping
 

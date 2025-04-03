@@ -1,20 +1,40 @@
-# Big-Data-Analysis-System-for-Product-Recommendations-Based-on-Spark
+# Big Data Analytics Product Recommendation System Based on Spark
+This project implements a big data product recommendation system using Apache Spark. It leverages text analysis and clustering algorithms to process product-related data and provides an interactive frontend for data visualization and search.
 
 **Technology Stack Overview**
 
-Java Side - Spark
+### Backend - Java & Spark
+- **Database Connection**
+- **TF-IDF Word Segmentation**
+- **KMeans Clustering**
 
-- Database Connectivity
-- TF-IDF Text Tokenization
-- KMeans Clustering
 
-Python Side
+### Backend - Python
+- **Flask Server**
+- **pyecharts for Visualization**
 
-- Flask - Backend
 
-- pyecharts - Chart Visualization
+---
 
-  
+## Features Overview
+
+### Login Module
+- User identity verification
+- Login data filtering
+
+### Data Display
+- Word cloud visualization of keywords
+- Waterfall charts for product trends
+
+### Data Search
+- Keyword-based product search box
+- Pie chart visualization of search results
+
+### ⚙Data Processing
+- Chinese word segmentation using TF-IDF
+- KMeans clustering for product grouping
+
+---
 
 # 基于 Spark 的商品推荐大数据分析系统
 
